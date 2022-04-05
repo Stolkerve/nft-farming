@@ -1,7 +1,7 @@
-const farmingContractName = 'dev-1647599503667-53369781664552'
+const farmingContractName = 'dev-1649119373795-13899959082655'
 const nftContractName = 'paras-token-v1.testnet'
-const ftContractName = 'dev-1631277489384-75412609538902'
-const ownerAccountName = 'orang.testnet'
+const ftContractName = 'dev-1649119497564-55770252445071'
+const ownerAccountName = 'pruebaprueba.testnet'
 
 module.exports = function getConfig(network = 'mainnet') {
 	let config = {

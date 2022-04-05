@@ -40,42 +40,6 @@ describe('NFT Farming Contract', function () {
 		assert.notStrictEqual(state.code_hash, '11111111111111111111111111111111')
 	});
 
-    it('should be upgraded', async function () {
-        try {
-			await farmingContract.migrate({})
-		} catch (e) {
-            console.warn(e)
-		}
-    })
-
-    it('should force upgrade', async function () {
-        try {
-			await farmingContract.force_upgrade_seed({
-                args: {
-                    seed_id: ftContractName
-                },
-                gas: gas_max
-            })
-
-			await farmingContract.force_upgrade_seed({
-                args: {
-                    seed_id: `${nftContractName}`
-                },
-                gas: gas_max
-            })
-
-			await farmingContract.force_upgrade_seed({
-                args: {
-                    seed_id: `${nftContractName}-7777`
-                },
-                gas: gas_max
-            })
-		} catch (e) {
-            console.warn(e)
-		}
-    })
-    
-
     it('should create simple farm ft staking', async function () {
         try {
             const seed = await farmingContract.get_seed_info({
@@ -103,6 +67,15 @@ describe('NFT Farming Contract', function () {
             gas,
             deposit = "19380000000000000000000"
             )
+
+            const seed2 = await farmingContract.get_seed_info({
+                seed_id: ftContractName
+            })
+            const farm2 = await farmingContract.get_farm({
+                farm_id: `${ftContractName}#0`
+            })
+            console.log(seed2)
+            console.log(farm2)
 		} catch (e) {
             console.warn(e)
 		}
