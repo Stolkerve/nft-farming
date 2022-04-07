@@ -1,5 +1,5 @@
-const farmingContractName = 'dev-1649119373795-13899959082655'
-const nftContractName = 'paras-token-v1.testnet'
+const farmingContractName = 'dev-1649371698726-40356935804134'
+const nftContractName = 'dev-1649259045266-73594760682734'
 const ftContractName = 'dev-1649119497564-55770252445071'
 const ownerAccountName = 'pruebaprueba.testnet'
 
